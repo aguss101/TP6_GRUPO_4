@@ -60,7 +60,7 @@
             <tr>
                 <td class="auto-style7"></td>
                 <td class="auto-style8">
-                    <asp:HyperLink ID="hpEj1" runat="server" Font-Size="Large" Font-Underline="True" ForeColor="Blue">Ejercicio 1</asp:HyperLink>
+                    <asp:HyperLink ID="hpEj1" runat="server" Font-Size="Large" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/Ejercicio1.aspx">Ejercicio 1</asp:HyperLink>
                 </td>
                 <td class="auto-style8"></td>
                 <td class="auto-style8"></td>
@@ -68,7 +68,7 @@
             <tr>
                 <td class="auto-style9"></td>
                 <td class="auto-style10">
-                    <asp:HyperLink ID="hpEj2" runat="server" Font-Size="Large" Font-Underline="True" ForeColor="Blue">Ejercicio 2</asp:HyperLink>
+                    <asp:HyperLink ID="hpEj2" runat="server" Font-Size="Large" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/Ejercicio2.aspx">Ejercicio 2</asp:HyperLink>
                 </td>
                 <td class="auto-style10"></td>
                 <td class="auto-style10"></td>
