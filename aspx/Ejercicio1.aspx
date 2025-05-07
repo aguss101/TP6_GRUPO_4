@@ -76,7 +76,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False">
+                <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False">
                     <Columns>
                         <asp:TemplateField HeaderText="Id Producto">
                             <ItemTemplate>

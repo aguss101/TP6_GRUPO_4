@@ -10,7 +10,7 @@ namespace TP6_GRUPO_4
     public partial class Ejercicio1 : System.Web.UI.Page
     {
        
-        private NeptunoBaseAccess neptunoBaseAccess = new NeptunoBaseAccess();
+      
                 GestionProductos gestionProductos = new GestionProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,10 +21,10 @@ namespace TP6_GRUPO_4
         }
     public void getProductos()
         {
-            GestionProductos gestionProductos = new GestionProductos();
+          
            
-            GridView1.DataSource = gestionProductos.RecibirProductos();
-            GridView1.DataBind();
+            gvProductos.DataSource = gestionProductos.RecibirProductos();
+            gvProductos.DataBind();
         }
 }
     }
