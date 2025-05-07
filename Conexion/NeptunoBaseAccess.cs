@@ -10,7 +10,7 @@ namespace TP6_GRUPO_4
 {
     public class NeptunoBaseAccess
     {
-        string LinkConexion = @"Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
+        string LinkConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=False";
 
         public NeptunoBaseAccess()
         {

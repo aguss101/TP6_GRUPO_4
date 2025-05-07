@@ -12,12 +12,12 @@ namespace TP6_GRUPO_4
 
     {
         NeptunoBaseAccess neptuno = new NeptunoBaseAccess();
+
         public GestionProductos() { /* CONSTRUCTOR VACÍO*/ }
 
         private DataTable RecibirTabla(string nombreTabla, string consulta)
         {
             DataSet dataset = new DataSet();
-            
             SqlDataAdapter adapter = neptuno.RecibirAdapter(consulta);
             adapter.Fill(dataset, nombreTabla);
             return dataset.Tables[nombreTabla];
@@ -48,7 +48,6 @@ namespace TP6_GRUPO_4
         {
             SqlCommand cmd = new SqlCommand();
             ParametersToInsert(ref cmd, producto);
-            
             int FilasInsertadas = neptuno.EjecutarProcedimientoAlmacenado(cmd, /*"spModificarProducto"*/"Categorías");
             if (FilasInsertadas == 1)
             {
@@ -63,7 +62,6 @@ namespace TP6_GRUPO_4
         {
             SqlCommand cmd = new SqlCommand();
             ParametersToDelete(ref cmd, producto);
-           
             int FilasInsertadas = neptuno.EjecutarProcedimientoAlmacenado(cmd, /*"spEliminarProducto"*/"Categorías");
             if (FilasInsertadas == 1)
             {

@@ -21,8 +21,9 @@ namespace TP6_GRUPO_4
         }
     public void getProductos()
         {
-            gestionProductos.RecibirProductos();
-            GridView1.DataSource = gestionProductos;
+            GestionProductos gestionProductos = new GestionProductos();
+           
+            GridView1.DataSource = gestionProductos.RecibirProductos();
             GridView1.DataBind();
         }
 }
