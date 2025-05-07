@@ -78,6 +78,12 @@
             <td>
                 <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gvProductos_PageIndexChanging">
                     <Columns>
+                        <asp:TemplateField HeaderText="">
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" Text="Edit" CommandName="EditProduct" CommandArgument='<%# Eval("IdProducto") %>' OnCommand="gestionarProducto"></asp:LinkButton>
+                                <asp:LinkButton runat="server" Text="Delete" CommandName="DeleteProduct" CommandArgument='<%# Eval("IdProducto") %>' OnCommand="gestionarProducto"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Id Producto">
                             <ItemTemplate>
                                 <asp:Label ID="lbl_it_idProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
