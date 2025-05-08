@@ -1,0 +1,15 @@
+CREATE PROCEDURE [dbo].[sp_ActualizarProducto](
+ @IdProducto INT,
+ @NombreProducto VARCHAR(50),
+ @CantidadPorUnidad VARCHAR(50),
+ @PrecioUnidad Money
+)
+AS
+UPDATE Productos
+SET
+IdProducto=@IdProducto,
+NombreProducto=@NombreProducto,
+CantidadPorUnidad=@CantidadPorUnidad,
+PrecioUnidad=@PrecioUnidad
+WHERE IdProducto=@IdProducto
+RETURN
