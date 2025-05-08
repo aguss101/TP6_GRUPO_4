@@ -55,11 +55,6 @@ namespace TP6_GRUPO_4
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_IdProducto")).Text;
-            if (string.IsNullOrEmpty(idProducto))
-            {
-                lblMessage.Text = "Error: No se encontró el control lbl_eit_IdProducto.";
-                return;
-            }
             string nombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txb_eit_NombreProducto")).Text;
             string cantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txb_eit_CantidadPorUnidad")).Text;
             string precioUnitario = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txb_eit_PrecioUnidad")).Text;
