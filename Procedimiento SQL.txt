@@ -5,11 +5,19 @@ CREATE PROCEDURE [dbo].[sp_ActualizarProducto](
  @PrecioUnidad Money
 )
 AS
-UPDATE Productos
+UPDATE Productos					/// ACTUALIZAR PRODUCTO.
 SET
 IdProducto=@IdProducto,
 NombreProducto=@NombreProducto,
 CantidadPorUnidad=@CantidadPorUnidad,
 PrecioUnidad=@PrecioUnidad
 WHERE IdProducto=@IdProducto
+RETURN
+
+/// ELIMINAR PRODUCTO
+CREATE PROCEDURE sp_EliminarProducto
+@IdProducto INT
+AS
+DELETE FROM Productos
+Where IdProducto = @IdProducto
 RETURN

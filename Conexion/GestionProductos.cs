@@ -30,7 +30,7 @@ namespace TP6_GRUPO_4
         {
             SqlParameter parameters = new SqlParameter();
             parameters = Comando.Parameters.Add("@IdProducto", SqlDbType.Int);
-          ///  SqlParametros.Value = producto.Idproducto; AÑADIR
+            parameters.Value = producto.idProducto;
         }
         private void ParametersToInsert(ref SqlCommand Comando, Producto producto)
         { /// MODIFICAR CHECKEANDO BASE DE DATOS
@@ -64,7 +64,7 @@ namespace TP6_GRUPO_4
         {
             SqlCommand cmd = new SqlCommand();
             ParametersToDelete(ref cmd, producto);
-            int FilasInsertadas = neptuno.EjecutarProcedimientoAlmacenado(cmd, /*"spEliminarProducto"*/"Categorías");
+            int FilasInsertadas = neptuno.EjecutarProcedimientoAlmacenado(cmd, "sp_EliminarProducto");
             if (FilasInsertadas == 1)
             {
                 return true;

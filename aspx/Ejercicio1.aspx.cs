@@ -11,9 +11,9 @@ namespace TP6_GRUPO_4
 {
     public partial class Ejercicio1 : System.Web.UI.Page
     {
-       
-      
-                GestionProductos gestionProductos = new GestionProductos();
+
+
+        GestionProductos gestionProductos = new GestionProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -21,10 +21,10 @@ namespace TP6_GRUPO_4
                 getProductos();
             }
         }
-    public void getProductos()
+        public void getProductos()
         {
-          
-           
+
+
             gvProductos.DataSource = gestionProductos.RecibirProductos();
             gvProductos.DataBind();
         }
@@ -49,7 +49,7 @@ namespace TP6_GRUPO_4
 
         protected void gvProductos_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            
+
         }
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -59,7 +59,7 @@ namespace TP6_GRUPO_4
             string cantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txb_eit_CantidadPorUnidad")).Text;
             string precioUnitario = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txb_eit_PrecioUnidad")).Text;
             Producto producto = new Producto(
-                    Convert.ToInt32(idProducto), nombreProducto,cantidadPorUnidad, Convert.ToDecimal(precioUnitario));
+                    Convert.ToInt32(idProducto), nombreProducto, cantidadPorUnidad, Convert.ToDecimal(precioUnitario));
 
 
 
@@ -75,5 +75,22 @@ namespace TP6_GRUPO_4
                 lblMessage.Text = "Error al actualizar el producto.";
             }
         }
+
+        protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_IdProducto")).Text;
+            Producto producto = new Producto(Convert.ToInt32(idProducto));
+            if (gestionProductos.DeleteProduct(producto))
+            {
+                lblMessage.Text = "Producto eliminado correctamente.";
+                gvProductos.EditIndex = -1;
+                getProductos();
+            }
+            else
+            {
+                lblMessage.Text = "Error al eliminar el producto.";
+
+            }
+        }
     }
-    }
+}
