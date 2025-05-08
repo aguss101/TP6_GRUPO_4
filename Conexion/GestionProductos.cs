@@ -34,21 +34,23 @@ namespace TP6_GRUPO_4
         }
         private void ParametersToInsert(ref SqlCommand Comando, Producto producto)
         { /// MODIFICAR CHECKEANDO BASE DE DATOS
-            /*
+
             SqlParameter parameters = new SqlParameter();
-            parameters = Comando.parameters.Add("@IdProducto", SqlDbType.Int);
-            parameters.Value = producto.Idproducto;
-            parameters = Comando.parameters.Add("@NombreProducto", SqlDbType.VarChar);
+            parameters = Comando.Parameters.Add("@IdProducto", SqlDbType.Int);
+            parameters.Value = producto.idProducto;
+            parameters = Comando.Parameters.Add("@NombreProducto", SqlDbType.VarChar);
             parameters.Value = producto.NombreProducto;
-            parameters = Comando.parameters.Add("@PrecioUnitario", SqlDbType.Decimal);
+            parameters = Comando.Parameters.Add("@CantidadPorUnidad", SqlDbType.VarChar);
+            parameters.Value = producto.CantidadPorUnidad;
+            parameters = Comando.Parameters.Add("@PrecioUnidad", SqlDbType.Money);
             parameters.Value = producto.PrecioUnitario;
-            */
+
         }
         public bool UpdateProduct(Producto producto)
         {
             SqlCommand cmd = new SqlCommand();
             ParametersToInsert(ref cmd, producto);
-            int FilasInsertadas = neptuno.EjecutarProcedimientoAlmacenado(cmd, /*"spModificarProducto"*/"Categorías");
+            int FilasInsertadas = neptuno.EjecutarProcedimientoAlmacenado(cmd, "sp_ActualizarProducto");
             if (FilasInsertadas == 1)
             {
                 return true;

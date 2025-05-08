@@ -76,30 +76,36 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gvProductos_PageIndexChanging">
+                <asp:GridView ID="gvProductos" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AutoGenerateColumns="False" AllowPaging="True" AutoGenerateEditButton="True" OnPageIndexChanging="gvProductos_PageIndexChanging" OnRowCancelingEdit="gvProductos_RowCancelingEdit" OnRowEditing="gvProductos_RowEditing" OnRowUpdating="gvProductos_RowUpdating" OnSelectedIndexChanging="gvProductos_SelectedIndexChanging">
                     <Columns>
-                        <asp:TemplateField HeaderText="">
-                            <ItemTemplate>
-                                <asp:LinkButton runat="server" Text="Edit" CommandName="EditProduct" CommandArgument='<%# Eval("IdProducto") %>' OnCommand="gestionarProducto"></asp:LinkButton>
-                                <asp:LinkButton runat="server" Text="Delete" CommandName="DeleteProduct" CommandArgument='<%# Eval("IdProducto") %>' OnCommand="gestionarProducto"></asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Id Producto">
+                            <EditItemTemplate>
+                                <asp:Label ID="lbl_eit_IdProducto" runat="server" Text='<%# BIND("IdProducto") %>'></asp:Label>
+                            </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lbl_it_idProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                                <asp:Label ID="lbl_it_idProducto" runat="server" Text='<%# BIND("IdProducto") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Nombre Producto">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txb_eit_NombreProducto" runat="server" Text='<%# BIND("NombreProducto") %>'></asp:TextBox>
+                            </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lbl_it_nombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Cantidad por Unidad">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txb_eit_CantidadPorUnidad" runat="server" Text='<%# BIND("CantidadPorUnidad") %>'></asp:TextBox>
+                            </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lbl_it_CantidadxUnidad" runat="server" Text='<%# Bind("CantidadPorUnidad") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio Unidad">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txb_eit_PrecioUnidad" runat="server" Text='<%# BIND("PrecioUnidad") %>'></asp:TextBox>
+                            </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lbl_it_precioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
                             </ItemTemplate>
@@ -143,7 +149,9 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="lblMessage" runat="server" ForeColor="#3333CC"></asp:Label>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
