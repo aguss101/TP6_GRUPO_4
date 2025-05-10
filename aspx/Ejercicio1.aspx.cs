@@ -78,7 +78,7 @@ namespace TP6_GRUPO_4
 
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_eit_IdProducto")).Text;
+            string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_it_IdProducto")).Text;
             Producto producto = new Producto(Convert.ToInt32(idProducto));
             if (gestionProductos.DeleteProduct(producto))
             {
