@@ -88,7 +88,8 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Nombre Producto">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txb_eit_NombreProducto" runat="server" Text='<%# BIND("NombreProducto") %>'></asp:TextBox>
+                                <asp:TextBox ID="txb_eit_NombreProducto" runat="server" Text='<%# BIND("NombreProducto") %>' Width="76px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvIdProducto" runat="server" ControlToValidate="txb_eit_NombreProducto" ErrorMessage="* Campo requerido"></asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lbl_it_nombreProducto" runat="server" Text='<%# Bind("NombreProducto") %>'></asp:Label>
@@ -104,7 +105,9 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio Unidad">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txb_eit_PrecioUnidad" runat="server" Text='<%# BIND("PrecioUnidad") %>'></asp:TextBox>
+                                <asp:TextBox ID="txb_eit_PrecioUnidad" runat="server" Text='<%# BIND("PrecioUnidad") %>' Width="84px"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="rev" runat="server" ControlToValidate="txb_eit_PrecioUnidad" ErrorMessage="* Solo carácteres númericos hasta 4 decimales" ValidationExpression="^\d+(\.\d{1,4})?$"></asp:RegularExpressionValidator>
+                                <br />
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lbl_it_precioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
