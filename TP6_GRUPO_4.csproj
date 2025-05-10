@@ -70,9 +70,25 @@
     <Content Include="aspx\Ejercicio1.aspx" />
     <Content Include="aspx\Ejercicio2.aspx" />
     <Content Include="aspx\Inicio.aspx" />
+    <Content Include="aspx\MostrarProductos.aspx" />
+    <Content Include="aspx\SeleccionarProductos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aspx\MostrarProductos.aspx.cs">
+      <DependentUpon>MostrarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\MostrarProductos.aspx.designer.cs">
+      <DependentUpon>MostrarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\SeleccionarProductos.aspx.cs">
+      <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\SeleccionarProductos.aspx.designer.cs">
+      <DependentUpon>SeleccionarProductos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Conexion\Producto.cs" />
     <Compile Include="aspx\Ejercicio1.aspx.cs">
       <DependentUpon>Ejercicio1.aspx</DependentUpon>

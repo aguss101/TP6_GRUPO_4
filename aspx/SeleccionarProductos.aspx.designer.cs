@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TP6_GRUPO_4
+namespace TP6_GRUPO_4.aspx
 {
 
 
-    public partial class Ejercicio2
+    public partial class SeleccionarProductos
     {
 
         /// <summary>
@@ -24,30 +24,12 @@ namespace TP6_GRUPO_4
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// hlSeleccionarProductos control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlSeleccionarProductos;
-
-        /// <summary>
-        /// hlEliminarProductos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEliminarProductos;
-
-        /// <summary>
-        /// hlMostrarProductos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlMostrarProductos;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
