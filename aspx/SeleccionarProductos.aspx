@@ -60,8 +60,16 @@
                 <tr>
                     <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style15">
-                        <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateSelectButton="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="gvProductos_PageIndexChanging" PageSize="14">
+                        <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnRowCommand="ToggleSeleccion" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="gvProductos_PageIndexChanging" PageSize="14">
                             <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton runat="server"
+                                                Text='<%# ToggleName(Eval("IdProducto")) %>'
+                                                CommandName="ToggleSeleccion"
+                                                CommandArgument='<%# Eval("IdProducto") %>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Id Producto">
                                     <ItemTemplate>
                                         <asp:Label ID="lbl_it_idProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
@@ -118,6 +126,11 @@
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style6">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                    <asp:HyperLink runat="server" Font-Size="Large" Font-Underline="True" ForeColor="Blue" NavigateUrl="~/aspx/Ejercicio2.aspx" Text="Volver" ></asp:HyperLink>
+                    </td>
                 </tr>
             </table>
         </div>
