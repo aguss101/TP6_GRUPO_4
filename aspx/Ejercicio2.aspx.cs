@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,12 +10,25 @@ namespace TP6_GRUPO_4
 {
     public partial class Ejercicio2 : System.Web.UI.Page
     {
-        private const string LinkConexion = @"Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
-        private string QuerySQL = "SELECT * FROM Clientes";
-        private NeptunoBaseAccess neptunoBaseAccess = new NeptunoBaseAccess();
+        
+        new GestionProductos gestionProductos = new GestionProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
             
+        }
+
+        protected void lbEliminarProductosSeleccionados_Click(object sender, EventArgs e)
+        {
+            getProductos();
+        }
+
+
+        protected void getProductos()
+        {
+            DataTable productos = gestionProductos.RecibirProductos();
+            List<string> seleccionados = Session["Seleccionados"] as List<string>;
+            Session["Seleccionados"] = null;
+
         }
     }
 }

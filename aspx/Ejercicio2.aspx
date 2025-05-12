@@ -36,18 +36,18 @@
         }
         .auto-style9 {
             width: 23px;
-            height: 23px;
+            height: 17px;
         }
         .auto-style10 {
             width: 66px;
-            height: 23px;
+            height: 17px;
         }
         .auto-style11 {
             width: 216px;
-            height: 23px;
+            height: 17px;
         }
         .auto-style12 {
-            height: 23px;
+            height: 17px;
         }
     </style>
 </head>
@@ -102,7 +102,7 @@
             <td class="auto-style9"></td>
             <td class="auto-style10"></td>
             <td class="auto-style11">
-                <asp:HyperLink ID="hlEliminarProductos" runat="server">Eliminar Productos seleccionados</asp:HyperLink>
+                <asp:LinkButton ID="lbEliminarProductosSeleccionados" runat="server" OnClick="lbEliminarProductosSeleccionados_Click">Eliminar Productos Seleccionados</asp:LinkButton>
             </td>
             <td class="auto-style12"></td>
             <td class="auto-style12"></td>
