@@ -25,7 +25,7 @@
                 <tr>
                     <td class="auto-style8">&nbsp;</td>
                     <td class="auto-style15">
-                        <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="gvProductos_PageIndexChanging" PageSize="14">
+                        <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="gvProductos_PageIndexChanging" PageSize="14" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged">
                             <Columns>
                                 <asp:TemplateField HeaderText="Id Producto">
                                     <ItemTemplate>

@@ -49,5 +49,10 @@ namespace TP6_GRUPO_4.aspx
             gvProductos.PageIndex = e.NewPageIndex;
             getProductos();
         }
+
+        protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

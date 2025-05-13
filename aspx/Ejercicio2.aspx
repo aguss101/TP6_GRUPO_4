@@ -105,7 +105,9 @@
                 <asp:LinkButton ID="lbEliminarProductosSeleccionados" runat="server" OnClick="lbEliminarProductosSeleccionados_Click">Eliminar Productos Seleccionados</asp:LinkButton>
             </td>
             <td class="auto-style12"></td>
-            <td class="auto-style12"></td>
+            <td class="auto-style12">
+                <asp:Label ID="lbldelete" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+            </td>
             <td class="auto-style12"></td>
             <td class="auto-style12"></td>
             <td class="auto-style12"></td>

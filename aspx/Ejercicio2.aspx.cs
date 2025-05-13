@@ -20,6 +20,7 @@ namespace TP6_GRUPO_4
         protected void lbEliminarProductosSeleccionados_Click(object sender, EventArgs e)
         {
             getProductos();
+            lbldelete.Text = "Los productos seleccionados fueron eliminados";
         }
 
 
