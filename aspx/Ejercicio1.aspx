@@ -106,7 +106,8 @@
                         <asp:TemplateField HeaderText="Precio Unidad">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txb_eit_PrecioUnidad" runat="server" Text='<%# BIND("PrecioUnidad") %>' Width="84px"></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="revPrecioUnidad" runat="server" ControlToValidate="txb_eit_PrecioUnidad" ErrorMessage="* Solo carácteres númericos hasta 4 decimales" ValidationExpression="^\d+(\.\d{1,4})?$"></asp:RegularExpressionValidator>
+
+                                <asp:RegularExpressionValidator ID="revPrecioUnidad" runat="server" ControlToValidate="txb_eit_PrecioUnidad" ErrorMessage="* Solo carácteres númericos hasta 4 decimales" ValidationExpression="^\d+([.,]\d{1,4})?$"></asp:RegularExpressionValidator>
                                 <br />
                             </EditItemTemplate>
                             <ItemTemplate>
